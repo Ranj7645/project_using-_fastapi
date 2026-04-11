@@ -53,7 +53,7 @@ class Vote(BaseModel):
     @field_validator("dir")
     def validate_dir(cls, v):
         if v not in [0,1]:
-            raise ValidationError({"dir":["Must be either 0 or 1"]})
+            raise ValueError({"dir":["Must be either 0 or 1"]})
         return v
 
 
